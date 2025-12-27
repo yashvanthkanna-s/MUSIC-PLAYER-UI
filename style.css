@@ -4,8 +4,8 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(135deg,#020617,#0f172a);
-  font-family:'Poppins', sans-serif;
+  background:radial-gradient(circle at top,#020617,#0f172a);
+  font-family:'Poppins',sans-serif;
 }
 
 .app{
@@ -13,42 +13,44 @@ body{
   text-align:center;
 }
 
-.app-header h1{
+.header h1{
   margin:0;
-  font-family:'Montserrat', sans-serif;
-  font-size:34px;
+  font-family:'Montserrat',sans-serif;
+  font-size:36px;
   font-weight:700;
-  color:#38bdf8;
-  animation:glow 4s infinite;
+  background:linear-gradient(90deg,#38bdf8,#818cf8,#22d3ee);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:shine 5s linear infinite;
 }
 
-@keyframes glow{
-  0%{text-shadow:0 0 6px #38bdf8;}
-  50%{text-shadow:0 0 16px #818cf8;}
-  100%{text-shadow:0 0 6px #38bdf8;}
+@keyframes shine{
+  0%{filter:drop-shadow(0 0 6px #38bdf8);}
+  50%{filter:drop-shadow(0 0 16px #818cf8);}
+  100%{filter:drop-shadow(0 0 6px #38bdf8);}
 }
 
-.app-header span{
+.header span{
   font-size:13px;
   color:#94a3b8;
 }
 
 .player{
-  margin-top:30px;
+  margin-top:28px;
   padding:26px;
   border-radius:20px;
   background:rgba(255,255,255,0.08);
-  box-shadow:0 25px 55px rgba(0,0,0,0.5);
+  box-shadow:0 30px 60px rgba(0,0,0,0.55);
 }
 
-.wave{
+.visual{
   display:flex;
   justify-content:center;
-  gap:5px;
+  gap:6px;
   margin-bottom:18px;
 }
 
-.wave span{
+.visual span{
   width:4px;
   height:20px;
   background:#38bdf8;
@@ -56,7 +58,12 @@ body{
   animation:wave 1.2s infinite ease-in-out;
 }
 
-body:not(.playing) .wave span{
+.visual span:nth-child(2){animation-delay:.1s}
+.visual span:nth-child(3){animation-delay:.2s}
+.visual span:nth-child(4){animation-delay:.3s}
+.visual span:nth-child(5){animation-delay:.4s}
+
+body:not(.playing) .visual span{
   animation-play-state:paused;
 }
 
@@ -65,13 +72,13 @@ body:not(.playing) .wave span{
   50%{height:36px}
 }
 
-.song-info h2{
+.song h2{
   margin:0;
   color:#f8fafc;
   font-weight:500;
 }
 
-.song-info p{
+.song p{
   margin:6px 0 22px;
   color:#c7d2fe;
   font-size:14px;
@@ -89,12 +96,12 @@ body:not(.playing) .wave span{
   height:60px;
   border:none;
   border-radius:50%;
-  background:#2563eb;
+  background:linear-gradient(145deg,#2563eb,#38bdf8);
   color:white;
   font-size:20px;
   cursor:pointer;
+  box-shadow:0 10px 25px rgba(59,130,246,0.45);
   transition:0.3s;
-  box-shadow:0 8px 20px rgba(59,130,246,0.4);
 }
 
 .controls button:hover{
@@ -112,10 +119,7 @@ body:not(.playing) .wave span{
 .progress div{
   height:100%;
   width:0%;
-  background:#38bdf8;
+  background:linear-gradient(90deg,#38bdf8,#818cf8);
   transition:0.2s linear;
 }
-
-
-
 
