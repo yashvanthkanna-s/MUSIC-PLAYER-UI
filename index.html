@@ -4,27 +4,26 @@
   <meta charset="UTF-8">
   <title>IsaiFlow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="music.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="app">
 
-  <header class="app-header">
+  <header class="header">
     <h1>IsaiFlow</h1>
-    <span>Feel the rhythm of Tamil melodies</span>
+    <span>Where Tamil music breathes</span>
   </header>
 
   <div class="player">
 
-    <div class="wave">
+    <div class="visual">
       <span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <div class="song-info">
+    <div class="song">
       <h2 id="songTitle">Munbe Vaa</h2>
       <p>A.R. Rahman</p>
     </div>
@@ -81,6 +80,7 @@ function nextSong(){
   loadSong();
   audio.play();
   playBtn.innerText = "⏸";
+  document.body.classList.add("playing");
 }
 
 audio.addEventListener("timeupdate", () => {
